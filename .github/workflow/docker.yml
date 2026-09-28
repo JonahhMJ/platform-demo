@@ -1,0 +1,19 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      -main
+
+    permissions:
+      contents: read
+      packages: write
+
+    env: 
+      REGISTRY: ghcr.io
+      IMAGE_NAME: JonahhLM/i_platform-demo
+
+    jobs: 
+      docker: 
+        name: Build and Publish Image
+        runs-on : ubuntu-latest
